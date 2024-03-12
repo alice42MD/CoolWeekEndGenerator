@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "BluuNext";
+  src: local("BluuNext-Bold"),
+    url("./assets/fonts/BluuNext-Bold.otf") format("truetype");
+}
