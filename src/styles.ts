@@ -27,6 +27,10 @@ export const StyledHeader = styled(Layout.Header)`
   display: flex;
   align-items: center;
   line-height: unset;
+  display: flex;
+  justify-content: space-between;
+  height: unset;
+  padding: 16px;
 `
 
 export const StyledContent= styled(Layout.Content)`
@@ -60,13 +64,29 @@ export const StyledTitle = styled.div`
 
 `
 
-export const StyledSubtitle = styled(StyledTitle)`
+export const StyledSubtitleBold = styled(StyledTitle)`
   font-size: 32px;
   line-height: 0.9;
 `
 
-export const StyledSubtitleBis = styled(StyledTitle)`
+export const StyledSubtitle = styled(StyledTitle)`
   text-align: center;
   font-size: 9px;
   letter-spacing: 9px;
+`
+
+export const StyledRadioContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    padding: 3px;
+    display: flex;
+    flex-direction: row;
+     width: 25%;
+    justify-content: space-around;
+  }
+  img {
+    width: 35px; 
+  }
 `

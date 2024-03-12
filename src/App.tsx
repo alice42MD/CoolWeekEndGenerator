@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import { Layout, } from 'antd';
-import { StyledContent, StyledFooter, StyledHeader, StyledSider, StyledTitle, StyledSubtitle, StyledSubtitleBis } from './styles';
+import { StyledContent, StyledFooter, StyledHeader, StyledSider, StyledTitle, StyledSubtitle, StyledSubtitleBold } from './styles';
 import imageContent from './assets/img/chiracos1.png';
 import imageContent2 from './assets/img/chiracos2.png';
 import { FaHeart } from 'react-icons/fa'
+import { Radio } from './Radio';
 
 
 function App () {
@@ -18,26 +19,19 @@ function App () {
               display: 'flex',
               alignItems: 'center'
             }}>
-              <StyledTitle>
-                C
-              </StyledTitle>
+              <StyledTitle>C</StyledTitle>
               <div>
                 <img src={imageContent} alt={"chiracos_1"} style={{ width: '50px' }} />
                 <img src={imageContent2} alt={"chiracos_2"} style={{ width: '50px' }} />
               </div>
-              <StyledTitle>
-                L
-              </StyledTitle>
+              <StyledTitle>L</StyledTitle>
             </div>
             <div>
-              <StyledSubtitle>
-                WEEKEND
-
-              </StyledSubtitle>
-
-              <StyledSubtitleBis>GENERATOR</StyledSubtitleBis>
+              <StyledSubtitleBold>WEEKEND</StyledSubtitleBold>
+              <StyledSubtitle>GENERATOR</StyledSubtitle>
             </div>
           </div>
+          <Radio />
         </StyledHeader>
         <StyledContent />
         <StyledFooter>
