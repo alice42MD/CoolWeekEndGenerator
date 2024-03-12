@@ -31,6 +31,13 @@ export const StyledHeader = styled(Layout.Header)`
   justify-content: space-between;
   height: unset;
   padding: 16px;
+  div:first-child {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    width: 50px;
+  }
 `
 
 export const StyledContent= styled(Layout.Content)`

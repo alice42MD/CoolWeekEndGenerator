@@ -14,15 +14,12 @@ function App () {
       <StyledSider />
       <Layout >
         <StyledHeader>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center'
-            }}>
+          <div>
+            <div>
               <StyledTitle>C</StyledTitle>
               <div>
-                <img src={imageContent} alt={"chiracos_1"} style={{ width: '50px' }} />
-                <img src={imageContent2} alt={"chiracos_2"} style={{ width: '50px' }} />
+                <img src={imageContent} alt={"chiracos_1"} />
+                <img src={imageContent2} alt={"chiracos_2"} />
               </div>
               <StyledTitle>L</StyledTitle>
             </div>
