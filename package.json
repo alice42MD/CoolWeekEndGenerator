@@ -20,7 +20,6 @@
     "react-dom": "^18.2.0",
     "react-geocode": "0.2.3",
     "react-google-maps": "9.4.5",
-    "react-hook-google-maps": "0.0.3",
     "react-icons": "^5.0.1",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.8",
@@ -53,6 +52,10 @@
   "devDependencies": {
     "@types/node": "^16.18.87",
     "@types/uuid": "^9.0.8",
+    "prettier": "^3.1.0",
+    "eslint": "^8.52.0",
+    "prettier-eslint": "^16.1.2",
+    "@typescript-eslint/parser": "^5.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^4.9.5"
   }
