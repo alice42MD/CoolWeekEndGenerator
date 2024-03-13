@@ -4,7 +4,7 @@ import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, MenuProps } from 'antd';
 import { StyledRadioContainer } from "./styles";
 
-export function Radio () {
+function Radio () {
   const [stations, setStations] = useState<Station[]>([])
   const [stationName, setStationName] = useState<string>('Radio Nova')
 
@@ -66,3 +66,5 @@ export function Radio () {
     </StyledRadioContainer>
   )
 }
+
+export default Radio

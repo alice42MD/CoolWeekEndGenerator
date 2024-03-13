@@ -4,6 +4,9 @@ import { Layout } from 'antd';
 const colors ={
   primary: '#7B9E89',
   secondary:' #776274',
+  tertiary: '#0F5257',
+  dark:'#254441',
+  light: '#C5EBC3',
   redError: '#E90606'
 }
 
@@ -13,8 +16,9 @@ export const StyledSider = styled(Layout.Sider)`
   left: 0;  
   top: 0;
   bottom: 0;
-  * { 
+  .ant-layout-sider-children { 
     background-color: ${colors.secondary};
+    padding: 24px;
     }
 `
 
@@ -96,4 +100,12 @@ export const StyledRadioContainer = styled.div`
   img {
     width: 35px; 
   }
+`
+
+export const StyledMapContainer = styled.div`
+  width: 150px;
+  height:  150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid ${colors.tertiary};
 `
