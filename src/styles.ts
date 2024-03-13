@@ -72,6 +72,7 @@ export const StyledFooter = styled(Layout.Footer)`
 export const StyledTitle = styled.div`
   font-family: "BluuNext";
   font-size: 50px;
+  color: ${colors.dark}
 
 `
 
@@ -94,11 +95,15 @@ export const StyledRadioContainer = styled.div`
     padding: 3px;
     display: flex;
     flex-direction: row;
-     width: 25%;
+    width: 25%;
     justify-content: space-around;
+    min-height: 45px;
   }
   img {
     width: 35px; 
+  }
+  svg {
+    color: ${colors.tertiary};
   }
 `
 
@@ -108,4 +113,33 @@ export const StyledMapContainer = styled.div`
   border-radius: 50%;
   overflow: hidden;
   border: 10px solid ${colors.tertiary};
+`
+
+export const Testcolor = styled.div`
+  display:flex ;
+  :nth-child(1) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.primary};
+  }
+  :nth-child(2) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.secondary};
+  }
+  :nth-child(3) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.tertiary};
+  }
+  :nth-child(4) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.dark};
+  }
+  :nth-child(5) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.light};
+  }
 `

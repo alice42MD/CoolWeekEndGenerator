@@ -8,7 +8,8 @@ import {
   StyledSider,
   StyledTitle,
   StyledSubtitle,
-  StyledSubtitleBold
+  StyledSubtitleBold,
+  Testcolor
 } from './styles';
 import imageContent from './assets/img/chiracos1.png';
 import imageContent2 from './assets/img/chiracos2.png';
@@ -41,7 +42,15 @@ function App () {
           </div>
           <Radio />
         </StyledHeader>
-        <StyledContent />
+        <StyledContent>
+          <Testcolor>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </Testcolor>
+        </StyledContent>
         <StyledFooter>
           <span>
             Made with <FaHeart /> by Alice
