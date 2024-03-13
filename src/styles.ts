@@ -4,6 +4,9 @@ import { Layout } from 'antd';
 const colors ={
   primary: '#7B9E89',
   secondary:' #776274',
+  tertiary: '#0F5257',
+  dark:'#254441',
+  light: '#C5EBC3',
   redError: '#E90606'
 }
 
@@ -13,8 +16,9 @@ export const StyledSider = styled(Layout.Sider)`
   left: 0;  
   top: 0;
   bottom: 0;
-  * { 
+  .ant-layout-sider-children { 
     background-color: ${colors.secondary};
+    padding: 24px;
     }
 `
 
@@ -68,6 +72,7 @@ export const StyledFooter = styled(Layout.Footer)`
 export const StyledTitle = styled.div`
   font-family: "BluuNext";
   font-size: 50px;
+  color: ${colors.dark}
 
 `
 
@@ -90,10 +95,51 @@ export const StyledRadioContainer = styled.div`
     padding: 3px;
     display: flex;
     flex-direction: row;
-     width: 25%;
+    width: 25%;
     justify-content: space-around;
+    min-height: 45px;
   }
   img {
     width: 35px; 
+  }
+  svg {
+    color: ${colors.tertiary};
+  }
+`
+
+export const StyledMapContainer = styled.div`
+  width: 150px;
+  height:  150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid ${colors.tertiary};
+`
+
+export const Testcolor = styled.div`
+  display:flex ;
+  :nth-child(1) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.primary};
+  }
+  :nth-child(2) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.secondary};
+  }
+  :nth-child(3) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.tertiary};
+  }
+  :nth-child(4) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.dark};
+  }
+  :nth-child(5) {
+    width:20px;
+    height:20px;
+    background-color: ${colors.light};
   }
 `
