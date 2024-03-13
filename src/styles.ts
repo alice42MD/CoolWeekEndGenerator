@@ -114,6 +114,21 @@ export const StyledMapContainer = styled.div`
   border: 10px solid ${colors.tertiary};
 `
 
+export const StyledWeatherContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  :last-child {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+`
+
 export const Testcolor = styled.div`
   display: flex;
   :nth-child(1) {

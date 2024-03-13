@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { WiCloudy, WiDaySunny, WiRain, WiSnow, WiStormShowers } from "react-icons/wi"
 import { CustomLocation, WeatherLocation, WeatherProps } from "./utils/types"
 import useGeoPosition from "./utils/useGeoLocation"
+import { StyledWeatherContainer } from "./styles"
 
 const keyQuery = `appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}`
 const server = "http://api.openweathermap.org/data/2.5"
@@ -36,7 +37,6 @@ const Weather = () => {
         setWeather(weather)
       }
     })()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location])
 
   const getCurrentWeather = async (location: CustomLocation) => {
@@ -50,26 +50,20 @@ const Weather = () => {
     return await current.json()
   }
 
+  if (!currentLocation || !weather) return null
   return (
-    currentLocation &&
-    weather && (
-      <>
-        <div>{currentLocation.name}</div>
-        <div>{weather.main.temp}°C</div>
-        <div>
-          ({weather.main.temp_min}°C / {weather.main.temp_max}°C)
-        </div>
-        {weather.weather.map(condition => {
-          return (
-            <div key={condition.id}>
-              {getIconUrl(condition.main)?.icon}
-              <div>{condition.description}</div>
-            </div>
-          )
-        })}
-        <div>Humidity: {weather.main.humidity}%</div>
-      </>
-    )
+    <StyledWeatherContainer>
+      <div>{currentLocation.name}</div>
+      <div>{weather.main.temp}°C</div>
+      {weather.weather.map(condition => {
+        return (
+          <div key={condition.id}>
+            {getIconUrl(condition.main)?.icon}
+            <div>{condition.description}</div>
+          </div>
+        )
+      })}
+    </StyledWeatherContainer>
   )
 }
 
