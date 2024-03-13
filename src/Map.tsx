@@ -1,5 +1,4 @@
-import { GoogleMap, Marker } from "@react-google-maps/api"
-import { useState } from "react"
+import { GoogleMap, MarkerF } from "@react-google-maps/api"
 import { StyledMapContainer } from "./styles"
 import useGeoLocation from "./utils/useGeoLocation"
 
@@ -11,31 +10,21 @@ const containerStyle = {
 const Map = () => {
   const { location, setLocation } = useGeoLocation()
 
-  const initialCenter = {
-    lat: 37.7749, // Coordinates for San Francisco
-    lng: -122.4194
-  }
-  const [, setCenter] = useState(initialCenter)
   const handleDragEnd = (e: google.maps.MapMouseEvent) => {
     if (e.latLng) {
-      if (e.latLng) {
-        const lat = e.latLng.lat()
-        const lng = e.latLng.lng()
-        setCenter({ lat, lng })
-        setLocation({ lat, lng })
-        // setSelectedOption("");
-      }
+      const lat = e.latLng.lat()
+      const lng = e.latLng.lng()
+      setLocation({ lat, lng })
     }
   }
 
+  if (!location) return null
   return (
-    location && (
-      <StyledMapContainer>
-        <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={16}>
-          <Marker visible position={location} draggable onDragEnd={handleDragEnd} />
-        </GoogleMap>
-      </StyledMapContainer>
-    )
+    <StyledMapContainer>
+      <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={16}>
+        <MarkerF visible position={location} draggable onDragEnd={handleDragEnd} />
+      </GoogleMap>
+    </StyledMapContainer>
   )
 }
 
