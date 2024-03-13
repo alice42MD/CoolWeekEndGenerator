@@ -1,25 +1,25 @@
-import styled from 'styled-components'
-import { Layout } from 'antd';
+import { Layout } from "antd"
+import styled from "styled-components"
 
-const colors ={
-  primary: '#7B9E89',
-  secondary:' #776274',
-  tertiary: '#0F5257',
-  dark:'#254441',
-  light: '#C5EBC3',
-  redError: '#E90606'
+const colors = {
+  primary: "#7B9E89",
+  secondary: " #776274",
+  tertiary: "#0F5257",
+  dark: "#254441",
+  light: "#C5EBC3",
+  redError: "#E90606"
 }
 
 export const StyledSider = styled(Layout.Sider)`
   height: 100vh;
-  position:fixed;
-  left: 0;  
+  position: fixed;
+  left: 0;
   top: 0;
   bottom: 0;
-  .ant-layout-sider-children { 
+  .ant-layout-sider-children {
     background-color: ${colors.secondary};
     padding: 24px;
-    }
+  }
 `
 
 export const StyledHeader = styled(Layout.Header)`
@@ -44,7 +44,7 @@ export const StyledHeader = styled(Layout.Header)`
   }
 `
 
-export const StyledContent= styled(Layout.Content)`
+export const StyledContent = styled(Layout.Content)`
   background: ${colors.primary};
   margin: 24px 16px 0;
   overflow: initial;
@@ -59,12 +59,12 @@ export const StyledFooter = styled(Layout.Footer)`
     color: ${colors.redError};
     margin: 0 3px;
     font-size: 10px;
-    animation: pound .35s infinite alternate;
-    -webkit-animation: pound .35s infinite alternate;
+    animation: pound 0.35s infinite alternate;
+    -webkit-animation: pound 0.35s infinite alternate;
   }
-  @keyframes pound{
-  to {  
-    transform: scale(1.1)
+  @keyframes pound {
+    to {
+      transform: scale(1.1);
     }
   }
 `
@@ -72,8 +72,7 @@ export const StyledFooter = styled(Layout.Footer)`
 export const StyledTitle = styled.div`
   font-family: "BluuNext";
   font-size: 50px;
-  color: ${colors.dark}
-
+  color: ${colors.dark};
 `
 
 export const StyledSubtitleBold = styled(StyledTitle)`
@@ -100,7 +99,7 @@ export const StyledRadioContainer = styled.div`
     min-height: 45px;
   }
   img {
-    width: 35px; 
+    width: 35px;
   }
   svg {
     color: ${colors.tertiary};
@@ -109,37 +108,37 @@ export const StyledRadioContainer = styled.div`
 
 export const StyledMapContainer = styled.div`
   width: 150px;
-  height:  150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   border: 10px solid ${colors.tertiary};
 `
 
 export const Testcolor = styled.div`
-  display:flex ;
+  display: flex;
   :nth-child(1) {
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
     background-color: ${colors.primary};
   }
   :nth-child(2) {
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
     background-color: ${colors.secondary};
   }
   :nth-child(3) {
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
     background-color: ${colors.tertiary};
   }
   :nth-child(4) {
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
     background-color: ${colors.dark};
   }
   :nth-child(5) {
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
     background-color: ${colors.light};
   }
 `

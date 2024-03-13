@@ -1,30 +1,30 @@
-import React from 'react';
-import './App.css';
-import { Layout, } from 'antd';
+import { Layout } from "antd"
+import { FaHeart } from "react-icons/fa"
+import "./App.css"
+import Map from "./Map"
+import Radio from "./Radio"
+import Weather from "./Weather"
+import imageContent from "./assets/img/chiracos1.png"
+import imageContent2 from "./assets/img/chiracos2.png"
 import {
   StyledContent,
   StyledFooter,
   StyledHeader,
   StyledSider,
-  StyledTitle,
   StyledSubtitle,
   StyledSubtitleBold,
+  StyledTitle,
   Testcolor
-} from './styles';
-import imageContent from './assets/img/chiracos1.png';
-import imageContent2 from './assets/img/chiracos2.png';
-import { FaHeart } from 'react-icons/fa'
-import Radio from './Radio';
-import Map from './Map';
+} from "./styles"
 
 function App () {
-
   return (
     <Layout hasSider>
-      <StyledSider >
+      <StyledSider>
         <Map />
+        <Weather />
       </StyledSider>
-      <Layout >
+      <Layout>
         <StyledHeader>
           <div>
             <div>
@@ -57,9 +57,8 @@ function App () {
           </span>
         </StyledFooter>
       </Layout>
-    </Layout >
-
-  );
+    </Layout>
+  )
 }
 
-export default App;
+export default App
