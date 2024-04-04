@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { WiCloudy, WiDaySunny, WiRain, WiSnow, WiStormShowers } from "react-icons/wi"
 import { CustomLocation, WeatherLocation, WeatherProps } from "./utils/types"
-import useGeoPosition from "./utils/useGeoLocation"
+import useGeoPosition from "./utils/hooks/useGeoLocation"
 import { StyledWeatherContainer } from "./styles"
 
 const keyQuery = `appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}`
 const server = "http://api.openweathermap.org/data/2.5"
 
-function getIconUrl (code: string) {
+function getIconUrl(code: string) {
   const icons = [
     { type: "Rain", icon: <WiRain /> },
     { type: "Clouds", icon: <WiCloudy /> },
@@ -25,7 +25,7 @@ const Weather = () => {
   const { location } = useGeoPosition()
 
   useEffect(() => {
-    ; (async function () {
+    ;(async function () {
       if (location) {
         const currentWeather = await getCurrentWeather(location)
         setCurrentLocation({
@@ -44,7 +44,7 @@ const Weather = () => {
     return await b.json()
   }
 
-  async function readWeather (locationId: number): Promise<WeatherProps> {
+  async function readWeather(locationId: number): Promise<WeatherProps> {
     const current = await fetch(`${server}/weather?id=${locationId}&${keyQuery}&units=metric&lang=fr`)
     if (current.status !== 200) throw new Error("Failed to read location data")
     return await current.json()

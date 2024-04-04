@@ -1,4 +1,4 @@
-import { Layout } from "antd"
+import { Layout, MenuProps } from "antd"
 import { FaHeart } from "react-icons/fa"
 import "./App.css"
 import Map from "./Map"
@@ -13,16 +13,32 @@ import {
   StyledSider,
   StyledSubtitle,
   StyledSubtitleBold,
-  StyledTitle,
-  Testcolor
+  StyledTitle
 } from "./styles"
+import MenuComponent from "./Menu"
+import { ReactElement, useState } from "react"
+import { MenuRenderProps } from "./utils/types"
 
-function App () {
+function App() {
+  const [render, updateRender] = useState<number>(1)
+
+  const components: MenuRenderProps = {
+    1: <div>Option 1</div>,
+    2: <div>Option 2</div>,
+    3: <div>Option 3</div>,
+    4: <div>Option 4</div>
+  }
+
+  const handleMenuClick = (e: { key: string }) => {
+    updateRender(Number(e.key))
+  }
+
   return (
     <Layout hasSider>
       <StyledSider>
         <Map />
         <Weather />
+        <MenuComponent handleClick={handleMenuClick} />
       </StyledSider>
       <Layout>
         <StyledHeader>
@@ -42,15 +58,7 @@ function App () {
           </div>
           <Radio />
         </StyledHeader>
-        <StyledContent>
-          <Testcolor>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </Testcolor>
-        </StyledContent>
+        <StyledContent>{components[render]}</StyledContent>
         <StyledFooter>
           <span>
             Made with <FaHeart /> by Alice
