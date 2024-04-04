@@ -17,18 +17,19 @@ import {
   Testcolor
 } from "./styles"
 import MenuComponent from "./Menu"
-import { ReactElement, useState } from "react"
+import { useState } from "react"
 import { MenuRenderProps } from "./utils/types"
 import Itinary from "./Itinary"
+import DndForm from "./DndForm"
+import ChatGPT from "./OpenAI"
 
 function App() {
   const [render, updateRender] = useState<number>(1)
 
   const components: MenuRenderProps = {
     1: <Itinary />,
-    2: <div>Option 2</div>,
-    3: <div>Option 3</div>,
-    4: <div>Option 4</div>
+    2: <DndForm />,
+    3: <ChatGPT />
   }
 
   const handleMenuClick = (e: { key: string }) => {

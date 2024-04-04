@@ -104,7 +104,6 @@
 // src/Chat.js
 
 import React, { useState } from "react"
-import { OpenAIAPIKey } from "./config"
 
 function Clear({ onClick }: { onClick: any }) {
   return <button onClick={onClick}>Clear</button>
@@ -153,7 +152,7 @@ const ChatGPT = () => {
     await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${OpenAIAPIKey}`,
+        Authorization: `Bearer ${process.env.REACT_APP_OPEN_AI_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
