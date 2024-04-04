@@ -1,5 +1,6 @@
 import { Layout, Menu } from "antd"
 import styled from "styled-components"
+import { StyledMapContainerProps } from "./utils/types"
 
 const colors = {
   primary: "#7B9E89",
@@ -17,8 +18,11 @@ export const StyledSider = styled(Layout.Sider)`
   top: 0;
   bottom: 0;
   .ant-layout-sider-children {
-    background-color: ${colors.secondary};
+    background-color:  ${colors.secondary};;
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -45,6 +49,8 @@ export const StyledHeader = styled(Layout.Header)`
 `
 
 export const StyledContent = styled(Layout.Content)`
+  display: flex;
+  justify-content: center;
   background: ${colors.primary};
   margin: 24px 16px 0;
   overflow: initial;
@@ -106,22 +112,26 @@ export const StyledRadioContainer = styled.div`
   }
 `
 
-export const StyledMapContainer = styled.div`
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+export const StyledMapContainer = styled.div<StyledMapContainerProps>`
+  ${({containerstyle}) => containerstyle}
+  ${({itinarydisplay}) =>  itinarydisplay === 'false' && `border: 10px solid ${colors.tertiary}; border-radius: 50%;`};
   overflow: hidden;
-  border: 10px solid ${colors.tertiary};
+  input {
+    width: 200
+  }
 `
 
 export const StyledWeatherContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  :last-child {
+  :nth-child(2) {
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+  :nth-child(3) {
+    text-align: center;
   }
   svg {
     width: 30px;
@@ -129,8 +139,79 @@ export const StyledWeatherContainer = styled.div`
   }
 `
 
+export const StyledAddressItinaryContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+`
+
+export const StyledAddressContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  justify-content: space-evenly;
+  align-content: space-around;
+  padding: 24px;
+  h1 {
+    font-family: "BluuNext";
+    font-size: 20px;
+    color: ${colors.dark};
+    text-align: center;
+  }
+  p {
+    width: 70px;
+  }
+  .forecast-container {
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    flex-direction: row;
+    padding: 24px;
+  }
+  .forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    margin: 10px;
+    text-align: center;
+  }
+  .switch-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+   & > div {
+      width: -webkit-fill-available;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+    p {
+      width: auto;
+    }
+  }
+  .directions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    :first-child {
+      font-size: 30px;
+    }
+  }
+`
+
+
+
+////////////////////////////////////////////////////////////////////////////////
 export const Testcolor = styled.div`
   display: flex;
+  margin: 5px;
   :nth-child(1) {
     width: 20px;
     height: 20px;
