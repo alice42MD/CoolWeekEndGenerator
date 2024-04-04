@@ -32,6 +32,7 @@ export interface WeatherProps {
   weather: WeatherConditions[];
   main: MainWeatherData;
   dt: number;
+  dt_txt: string;
 }
 
 export interface CustomLocation {
@@ -42,3 +43,10 @@ export interface CustomLocation {
 export   interface MenuRenderProps {
     [key: number]: ReactElement<any, any>
   }
+export interface StyledMapContainerProps {
+  itinarydisplay: 'true' | 'false'
+  containerstyle: {
+    width: string
+    height: string
+  }
+}

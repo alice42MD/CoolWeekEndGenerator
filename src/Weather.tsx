@@ -7,7 +7,7 @@ import { StyledWeatherContainer } from "./styles"
 const keyQuery = `appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}`
 const server = "http://api.openweathermap.org/data/2.5"
 
-function getIconUrl(code: string) {
+export function getIconUrl(code: string) {
   const icons = [
     { type: "Rain", icon: <WiRain /> },
     { type: "Clouds", icon: <WiCloudy /> },
@@ -40,8 +40,8 @@ const Weather = () => {
   }, [location])
 
   const getCurrentWeather = async (location: CustomLocation) => {
-    const b = await fetch(`${server}/weather?lat=${location.lat}&lon=${location.lng}&${keyQuery}`)
-    return await b.json()
+    const result = await fetch(`${server}/weather?lat=${location.lat}&lon=${location.lng}&${keyQuery}`)
+    return await result.json()
   }
 
   async function readWeather(locationId: number): Promise<WeatherProps> {
@@ -51,6 +51,7 @@ const Weather = () => {
   }
 
   if (!currentLocation || !weather) return null
+  // if (forecast && weather) return <Forecast />
   return (
     <StyledWeatherContainer>
       <div>{currentLocation.name}</div>
@@ -58,7 +59,7 @@ const Weather = () => {
       {weather.weather.map(condition => {
         return (
           <div key={condition.id}>
-            {getIconUrl(condition.main)?.icon}
+            <div>{getIconUrl(condition.main)?.icon}</div>
             <div>{condition.description}</div>
           </div>
         )

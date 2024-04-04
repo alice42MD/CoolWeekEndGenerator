@@ -13,17 +13,19 @@ import {
   StyledSider,
   StyledSubtitle,
   StyledSubtitleBold,
-  StyledTitle
+  StyledTitle,
+  Testcolor
 } from "./styles"
 import MenuComponent from "./Menu"
 import { ReactElement, useState } from "react"
 import { MenuRenderProps } from "./utils/types"
+import Itinary from "./Itinary"
 
 function App() {
   const [render, updateRender] = useState<number>(1)
 
   const components: MenuRenderProps = {
-    1: <div>Option 1</div>,
+    1: <Itinary />,
     2: <div>Option 2</div>,
     3: <div>Option 3</div>,
     4: <div>Option 4</div>
@@ -36,6 +38,13 @@ function App() {
   return (
     <Layout hasSider>
       <StyledSider>
+        <Testcolor>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </Testcolor>
         <Map />
         <Weather />
         <MenuComponent handleClick={handleMenuClick} />
