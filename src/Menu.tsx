@@ -15,7 +15,13 @@ function getItem(label: React.ReactNode, key: React.Key): MenuItem {
 }
 
 const MenuComponent = ({ handleClick }: { handleClick: (e: { key: string }) => void }) => {
-  const items: MenuProps["items"] = [getItem("Option 1", "1"), { type: "divider" }, getItem("Option 2", "2")]
+  const items: MenuProps["items"] = [
+    getItem("Itinary", "1"),
+    { type: "divider" },
+    getItem("Wheel", "2"),
+    { type: "divider" },
+    getItem("ChatGPT", "3")
+  ]
 
   return <StyledMenu onClick={handleClick} items={items} />
 }
