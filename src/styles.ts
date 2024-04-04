@@ -1,4 +1,4 @@
-import { Layout } from "antd"
+import { Layout, Menu } from "antd"
 import styled from "styled-components"
 
 const colors = {
@@ -156,4 +156,31 @@ export const Testcolor = styled.div`
     height: 20px;
     background-color: ${colors.light};
   }
+`
+
+export const StyledMenu = styled(Menu)`
+  text-align: center;
+
+  box-shadow: none;
+  background-color: unset ;
+ * { border-inline-end: 0px solid transparent;}
+
+&& .ant-menu-item:hover::after {
+        border-bottom: 0px solid transparent;
+         border-inline-end: 0px solid transparent;
+    }
+    
+    && .ant-menu-item-selected {
+        background-color: transparent;
+        border-top: 4px solid transparent;
+        border-radius: 0px;
+        color: black;
+         border-inline-end: 0px solid transparent;
+    }    
+
+    && .ant-menu-item-selected:after {
+        border-bottom-width: 0px;        
+        border-bottom-color: transparent;
+         border-inline-end: 0px solid transparent;
+    }
 `

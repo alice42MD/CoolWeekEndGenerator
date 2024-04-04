@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export interface Coordinates {
   lon: number;
   lat: number;
@@ -36,3 +38,7 @@ export interface CustomLocation {
   lat: number;
   lng: number;
 }
+
+export   interface MenuRenderProps {
+    [key: number]: ReactElement<any, any>
+  }

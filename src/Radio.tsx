@@ -4,7 +4,7 @@ import { DownOutlined } from "@ant-design/icons"
 import { Dropdown, MenuProps } from "antd"
 import { StyledRadioContainer } from "./styles"
 
-function Radio () {
+function Radio() {
   const [stations, setStations] = useState<Station[]>([])
   const [stationName, setStationName] = useState<string>("Radio Nova")
 
@@ -57,7 +57,7 @@ function Radio () {
           </div>
           <Dropdown children={<DownOutlined />} menu={{ items, selectable: true }} trigger={["click"]} />
         </div>
-        <audio ref={audioRef} src={stations[0].url} controls autoPlay={true} />
+        <audio ref={audioRef} src={stations[0].url} controls autoPlay={false} />
       </StyledRadioContainer>
     )
   )
